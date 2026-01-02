@@ -9,7 +9,9 @@ import { connectRabbitMQ } from "./config/rabbitmq.js";
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin:"https://chat2-peer.vercel.app"
+}))
 const port = process.env.PORT;
 connectDB();
 connectRabbitMQ()

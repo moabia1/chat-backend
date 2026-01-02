@@ -8,7 +8,9 @@ import { app, server } from "./config/socket.js"
 
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin:"https://chat2-peer.vercel.app"
+}))
 
 app.use("/api/v1",chatRoutes)
 
